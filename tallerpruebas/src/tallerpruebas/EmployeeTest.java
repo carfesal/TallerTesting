@@ -6,15 +6,28 @@ import org.junit.jupiter.api.Test;
 
 class EmployeeTest {
 
+	
 	@Test
-	void testEmployee() {
-		fail("Not yet implemented");
+	void testCs_Manager_USD() {
+		//test para Manager en USD 
+		Employee M_USD = new Employee(400.f,"USD",0.5f,EmployeeType.Manager);
+		assertEquals(464.68335f,M_USD.cs(),0.1f);		
 	}
-
+	
 	@Test
-	void testCs() {
-		fail("Not yet implemented");
+	void testCs_Worker_USD() {
+		//test para Worker USD
+		Employee W_USD = new Employee(400.f,"USD",0.5f,EmployeeType.Worker);
+		assertEquals(464.33334f,W_USD.cs(),0.1f);
 	}
+	@Test
+	void testCs_Supervisor_USD() {
+		//test para Supervisor 
+		Employee S_USD = new Employee(400.f,"USD",0.5f,EmployeeType.Supervisor);
+		assertEquals(464.5f,S_USD.cs(),0.1f);
+	}
+	
+	
 
 	@Test
 	void testCalculateYearBonus() {
