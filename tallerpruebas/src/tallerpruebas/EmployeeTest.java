@@ -6,7 +6,9 @@ import org.junit.jupiter.api.Test;
 
 class EmployeeTest{
 
-	
+	/**
+	 * METODO QUE TESTEA EL SALARIO CORRECTO DE WORKER EN MONEDA ALTERNA
+	 */
 	
 	@Test
 	void cambioMonedaWorker() {
@@ -14,11 +16,19 @@ class EmployeeTest{
 		assertEquals(824.33,e.cs(),0.1);
 	}
 	
+	/**
+	 * METODO QUE TESTEA EL SALARIO CORRECTO DE MANAGER EN MONEDA ALTERNA
+	 */
+	
 	@Test
 	void cambioMonedaManager() {
 		Employee e = new Employee((float)2000.00, "EURO", (float)0.05, EmployeeType.Manager);
 		assertEquals(1964.35,e.cs(),0.1);
 	}
+	
+	/**
+	 * METODO QUE TESTEA EL SALARIO CORRECTO DE SUPERVISOR EN MONEDA ALTERNA
+	 */
 	
 	@Test
 	void cambioMonedaWorkerSupervisor() {
@@ -54,15 +64,34 @@ class EmployeeTest{
 		assertEquals(464.5f,S_USD.cs(),0.1f);
 	}
 	
-
-	
-	
-	
-	
+	/**
+	 * METODO QUE TESTEA EL BONO CORRECTO DE SUPERVISOR EN USD
+	 */
 
 	@Test
-	void testCalculateYearBonus() {
-		fail("Not yet implemented");
+	void testCalculateYearBonusSupervisorUSD() {
+		Employee e = new Employee(600.f,"USD",0.5f,EmployeeType.Supervisor);
+		assertEquals(793,e.CalculateYearBonus(),0.1);
+	}
+	
+	/**
+	 * METODO QUE TESTEA EL BONO CORRECTO DE WORKER EN USD
+	 */
+
+	@Test
+	void testCalculateYearBonusWorkerUSD() {
+		Employee e = new Employee(400.f,"USD",0.5f,EmployeeType.Worker);
+		assertEquals(386,e.CalculateYearBonus(),0.1);
+	}
+	
+	/**
+	 * METODO QUE TESTEA EL BONO CORRECTO DE MANAGER EN USD
+	 */
+
+	@Test
+	void testCalculateYearBonusManagerUSD() {
+		Employee e = new Employee(1200.f,"USD",0.5f,EmployeeType.Manager);
+		assertEquals(1586,e.CalculateYearBonus(),0.1);
 	}
 
 
