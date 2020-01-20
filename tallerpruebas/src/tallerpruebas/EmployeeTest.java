@@ -7,9 +7,7 @@ import org.junit.jupiter.api.Test;
 class EmployeeTest{
 
 	
-	/**
-	 * METODO QUE TESTEA EL SALARIO CORRECTO DE MANAGER EN USD
-	 */
+	
 	@Test
 	void cambioMonedaWorker() {
 		Employee e = new Employee((float)800.00, "EURO", (float)0.05, EmployeeType.Worker);
@@ -27,7 +25,10 @@ class EmployeeTest{
 		Employee e = new Employee((float)1000.00, "EURO", (float)0.05, EmployeeType.Supervisor);
 		assertEquals(1014.36,e.cs(),0.1);
 	}
-	
+	/**
+	 * METODO QUE TESTEA EL SALARIO CORRECTO DE MANAGER EN USD
+	 */
+	@Test
 	void testCs_Manager_USD() {
 		//test para Manager en USD 
 		Employee M_USD = new Employee(400.f,"USD",0.5f,EmployeeType.Manager);
