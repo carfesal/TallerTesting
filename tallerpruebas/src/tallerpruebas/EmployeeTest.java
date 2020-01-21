@@ -93,6 +93,32 @@ class EmployeeTest{
 		Employee e = new Employee(1200.f,"USD",0.5f,EmployeeType.Manager);
 		assertEquals(1586,e.CalculateYearBonus(),0.1);
 	}
-
+	/**
+	 * METODO QUE TESTEA EL BONO CORRECTO DE Worker EN EUR
+	 */
+	@Test
+	void testCalculateYearWorkerEUR() {
+		Employee e = new Employee(400.f,"EUR",0.5f,EmployeeType.Worker);
+		assertEquals(386,e.CalculateYearBonus(),0.1);
+	}
+	
+	/**
+	 * METODO QUE TESTEA EL BONO CORRECTO DE SUPERVISOR EN EUR
+	 */
+	@Test
+	void testCalculateYearSupervisorEUR() {
+		Employee e = new Employee(700.f,"EUR",0.5f,EmployeeType.Supervisor);
+		assertEquals(858,e.CalculateYearBonus(),0.1);
+	}
+	
+	/**
+	 * METODO QUE TESTEA EL BONO CORRECTO DE Manager EN EUR
+	 */
+	
+	@Test
+	void testCalculateYearManagerEU() {
+		Employee e = new Employee(1400.f,"EUR",0.5f,EmployeeType.Manager);
+		assertEquals(1716,e.CalculateYearBonus(),0.1);
+	}
 
 }
